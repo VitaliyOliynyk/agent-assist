@@ -1,19 +1,21 @@
 package eu.vitaliy.agentassist;
 
+import javassist.CtMethod;
 import org.hamcrest.Matcher;
 
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.reflect.Method;
 
 public interface ClassRipper {
 
     String DEFAULT_NAME = "DEFAULT";
 
-    Matcher<Class> getClassName();
+    Matcher<String> classMatcher();
 
-    Matcher<Method> getMethodName();
+    Matcher<String> methodMatcher();
 
     ClassFileTransformer getTransformer();
+
+    void ripTheMethod(CtMethod method);
 
     default String getName() {
         return DEFAULT_NAME;

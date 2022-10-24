@@ -11,7 +11,7 @@ public class ClassRiperLoaderTest {
     @Test
     public void classRipperTestImplTest() {
         //when
-        Collection<ClassRipper> rippers = new ClassRiperLoader().loadRippers();
+        Collection<ClassRipper> rippers = new ClassRipperLoader().loadRippers();
 
         //when
         assertThat(rippers).hasSize(1);

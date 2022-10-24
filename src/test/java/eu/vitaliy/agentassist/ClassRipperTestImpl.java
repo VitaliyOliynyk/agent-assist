@@ -1,23 +1,28 @@
 package eu.vitaliy.agentassist;
 
+import javassist.CtMethod;
 import org.hamcrest.Matcher;
 
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.reflect.Method;
 
 public class ClassRipperTestImpl implements ClassRipper {
     @Override
-    public Matcher<Class> getClassName() {
+    public Matcher<String> classMatcher() {
         return null;
     }
 
     @Override
-    public Matcher<Method> getMethodName() {
+    public Matcher<String> methodMatcher() {
         return null;
     }
 
     @Override
     public ClassFileTransformer getTransformer() {
         return null;
+    }
+
+    @Override
+    public void ripTheMethod(CtMethod method) {
+        /* empty */
     }
 }
