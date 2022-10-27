@@ -1,9 +1,7 @@
 package eu.vitaliy.agentassist;
 
 import org.testng.annotations.Test;
-
 import java.util.Collection;
-
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class ClassRiperLoaderTest {

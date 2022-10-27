@@ -2,7 +2,6 @@ package eu.vitaliy.agentassist;
 
 import javassist.CtMethod;
 import org.hamcrest.Matcher;
-
 import java.lang.instrument.ClassFileTransformer;
 
 public class ClassRipperTestImpl implements ClassRipper {

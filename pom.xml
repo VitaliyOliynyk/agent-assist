@@ -5,8 +5,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>eu.vitaliy</groupId>
-  <artifactId>agent-assist</artifactId>
+  <artifactId>agent-assist-parent</artifactId>
+  <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>agent-assist-core</module>
+    <module>agent-assist-quickstart</module>
+  </modules>
 
   <name>agent-assist</name>
   <url>https://github.com/VitaliyOliynyk/agent-assist</url>

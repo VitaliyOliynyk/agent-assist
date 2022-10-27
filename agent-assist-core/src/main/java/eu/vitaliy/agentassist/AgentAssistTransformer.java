@@ -4,7 +4,6 @@ import javassist.*;
 
 import java.io.IOException;
 import java.lang.instrument.ClassFileTransformer;
-import java.lang.instrument.IllegalClassFormatException;
 import java.security.ProtectionDomain;
 import java.util.List;
 import java.util.stream.Collectors;
