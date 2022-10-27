@@ -29,7 +29,7 @@ public class AgentMain {
     private static void transformClass(ClassRipper ripper, Instrumentation instrumentation) {
         @SuppressWarnings("rawtypes")
         List<Class> classesToTransform = Stream.of(instrumentation.getAllLoadedClasses())
-                .filter(ripper.classMatcher()::matches)
+                .filter(c -> ripper.classMatcher().matches(c.getName()))
                 .collect(Collectors.toList());
 
         if (classesToTransform.isEmpty()) {
