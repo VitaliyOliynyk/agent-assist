@@ -13,9 +13,11 @@ public interface ClassRipper {
 
     Matcher<String> methodMatcher();
 
-    ClassFileTransformer getTransformer();
-
     void ripTheMethod(CtMethod method);
+
+    default ClassFileTransformer getTransformer() {
+        return null;
+    }
 
     default String getName() {
         return DEFAULT_NAME;

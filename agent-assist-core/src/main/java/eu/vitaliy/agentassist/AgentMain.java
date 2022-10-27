@@ -1,5 +1,6 @@
 package eu.vitaliy.agentassist;
 
+import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.Instrumentation;
 import java.util.Collection;
 import java.util.List;
@@ -43,7 +44,13 @@ public class AgentMain {
     }
 
     private static void transform(Class<?> clazz, Instrumentation instrumentation, ClassRipper ripper) {
-        AgentAssistTransformer dt = new AgentAssistTransformer(ripper, clazz.getName(), clazz.getClassLoader());
+        ClassFileTransformer dt;
+        if (ripper.getTransformer() != null) {
+            dt = ripper.getTransformer();
+        } else {
+            dt = new AgentAssistTransformer(ripper, clazz.getName(), clazz.getClassLoader());
+        }
+
         instrumentation.addTransformer(dt, true);
         try {
             instrumentation.retransformClasses(clazz);
