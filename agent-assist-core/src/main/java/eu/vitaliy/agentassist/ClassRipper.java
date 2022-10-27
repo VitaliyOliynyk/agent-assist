@@ -1,7 +1,6 @@
 package eu.vitaliy.agentassist;
 
 import javassist.CtMethod;
-import org.hamcrest.Matcher;
 
 import java.lang.instrument.ClassFileTransformer;
 
@@ -9,9 +8,9 @@ public interface ClassRipper {
 
     String DEFAULT_NAME = "DEFAULT";
 
-    Matcher<String> classMatcher();
+    boolean classFilter(String className);
 
-    Matcher<String> methodMatcher();
+    boolean methodFilter(String methodName);
 
     void ripTheMethod(CtMethod method);
 

@@ -5,19 +5,16 @@ import org.hamcrest.Matcher;
 import java.lang.instrument.ClassFileTransformer;
 
 public class ClassRipperTestImpl implements ClassRipper {
+
+
     @Override
-    public Matcher<String> classMatcher() {
-        return null;
+    public boolean classFilter(String className) {
+        return true;
     }
 
     @Override
-    public Matcher<String> methodMatcher() {
-        return null;
-    }
-
-    @Override
-    public ClassFileTransformer getTransformer() {
-        return null;
+    public boolean methodFilter(String methodName) {
+        return true;
     }
 
     @Override

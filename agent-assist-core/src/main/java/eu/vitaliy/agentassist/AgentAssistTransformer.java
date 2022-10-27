@@ -42,7 +42,7 @@ public class AgentAssistTransformer implements ClassFileTransformer {
                 cp.insertClassPath(new ClassClassPath(classBeingRedefined));
                 CtClass cc = cp.get(targetClassName);
                 List<CtMethod> methods = Stream.of(cc.getDeclaredMethods())
-                        .filter(ctMethod -> classRipper.methodMatcher().matches(ctMethod.getName()))
+                        .filter(ctMethod -> classRipper.methodFilter(ctMethod.getName()))
                         .collect(Collectors.toList());
 
                 methods.forEach(classRipper::ripTheMethod);
