@@ -36,7 +36,7 @@ public class AgentAssistTransformer implements ClassFileTransformer {
         }
 
         if (loader.equals(targetClassLoader)) {
-            System.out.println("[Agent] Transforming class MyAtm");
+            System.out.println("[Agent] Transforming class " + this.targetClassName);
             try {
                 ClassPool cp = ClassPool.getDefault();
                 cp.insertClassPath(new ClassClassPath(classBeingRedefined));
